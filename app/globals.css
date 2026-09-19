@@ -1,26 +1,160 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Core surfaces */
+  --color-ink: #0f0f12;
+  --color-ink-soft: #1b1b1f;
+  --color-ink-muted: #525252;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Brand */
+  --color-brand: #5a31b2;
+  --color-brand-deep: #4f2aa1;
+  --color-brand-dark: #4b2d7a;
+  --color-lilac: #f4f1fb;
+
+  /* Accents */
+  --color-flame: #ff6a2c;
+  --color-flame-soft: #ffb48a;
+  --color-mint: #508c87;
+  --color-sky: #2563eb;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* Keep anchored sections clear of the sticky header */
+  scroll-padding-top: 6rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+/* --- Motion -------------------------------------------------------------
+   Scroll-driven reveals, gated behind @supports. Browsers without
+   `animation-timeline` never apply the animation at all, so `.reveal` content
+   renders at its natural opacity instead of being stuck invisible. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation-name: rise;
+    /* Ignored for progress-based timelines, but required for a valid animation. */
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 24%;
+  }
+}
+
+/* Hero words stagger in on load; --i sets the position in the line. */
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em) rotate(2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.word {
+  display: inline-block;
+  animation: word-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+.marquee-track--slow {
+  animation-duration: 60s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .word,
+  .marquee-track {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- FAQ (native <details>, no JS) -------------------------------------- */
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-sign {
+  transform: rotate(45deg);
+}
+
+/* --- Decorative --------------------------------------------------------- */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Stacked feature cards ----------------------------------------------
+   Each card sticks below the header at its own offset, so the next card
+   scrolls up and comes to rest on top of it, leaving the earlier ones
+   peeking out above. Below lg the cards are taller than the viewport, so
+   they stay in normal flow and simply scroll. */
+.card-stack > * + * {
+  margin-top: 1rem;
+}
+
+@media (min-width: 64rem) {
+  .card-stack > * + * {
+    margin-top: 2.5rem;
+  }
+
+  .card-stack__item {
+    position: sticky;
+    top: calc(5rem + var(--i, 0) * 1.15rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-stack__item {
+    position: static;
+  }
 }

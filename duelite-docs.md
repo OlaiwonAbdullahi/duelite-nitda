@@ -1,8 +1,8 @@
-# Duevy Hackathon Demo: Product Documentation
+# Duelite Hackathon Demo: Product Documentation
 
 > **Pay your dues. Simply.**
 
-Duevy is a platform where Nigerian students pay departmental dues, handouts and levies in one transfer, and where course reps collect, track and withdraw that money with a full paper trail. This document describes every feature of the hackathon demo, what it does, and why it is there.
+Duelite is a platform where Nigerian students pay departmental dues, handouts and levies in one transfer, and where course reps collect, track and withdraw that money with a full paper trail. This document describes every feature of the hackathon demo, what it does, and why it is there.
 
 **Demo build** | **Simulated payments** | **3 build tracks**
 
@@ -38,7 +38,7 @@ In most Nigerian tertiary institutions, a course rep collects money through a Wh
 
 ### The solution
 
-Duevy replaces that chain with one system. A rep creates a **space** for a department, class or association and adds **dues** to it. Students join with a code, tick the dues they owe and pay in a single transfer. The rep sees payments arrive live and withdraws to their own bank account, and every movement of money is recorded in an audit trail that students can inspect.
+Duelite replaces that chain with one system. A rep creates a **space** for a department, class or association and adds **dues** to it. Students join with a code, tick the dues they owe and pay in a single transfer. The rep sees payments arrive live and withdraws to their own bank account, and every movement of money is recorded in an audit trail that students can inspect.
 
 ### What this demo is
 
@@ -57,7 +57,7 @@ Roles are additive. A person signs up as a student, and gains rep permissions th
 | Student     | Any coursemate in a space                      | Join spaces, pay dues, view receipts and history, request refunds, vote in polls, use the assistant. |
 | Rep         | Course rep or class treasurer who owns a space | Create spaces and dues, view live collections, withdraw money, invite co-reps, run polls.            |
 | Co-rep      | Treasurer, secretary or PRO invited by a rep   | Role-based access to a space. Treasurers can act as signatories on withdrawals.                      |
-| Super admin | Duevy operator                                 | Approve reps, oversee all spaces and transactions, handle disputes, manage schools.                  |
+| Super admin | Duelite operator                                 | Approve reps, oversee all spaces and transactions, handle disputes, manage schools.                  |
 | Institution | A school portal (through the API)              | Read dues data for its own students with an API key.                                                 |
 
 ---
@@ -86,7 +86,7 @@ The heart of the product: a student pays several dues in one transfer, and the r
 ```mermaid
 sequenceDiagram
   participant S as Student
-  participant D as Duevy demo app
+  participant D as Duelite demo app
   participant P as Rep dashboard
   S->>D: Join space with code
   S->>D: Select dues and tap Pay
@@ -102,7 +102,7 @@ No single person can move class money. A withdrawal needs two independent approv
 ```mermaid
 sequenceDiagram
   participant R as Rep
-  participant D as Duevy demo app
+  participant D as Duelite demo app
   participant A as Signatory 1
   participant B as Signatory 2
   R->>D: Request withdrawal
@@ -199,7 +199,7 @@ A student requests their money back for a cancelled or wrongly paid due.
 Departmental polls, elections and award nights, with optional paid ballots.
 
 - **How it works:** A rep creates a poll with candidates. Each student votes once, or buys extra votes for awards-style contests. Results update live and the ballot revenue goes to the space.
-- **Why it matters:** It turns Duevy into the place where class life happens, not just where dues are paid, and it opens a second revenue stream.
+- **Why it matters:** It turns Duelite into the place where class life happens, not just where dues are paid, and it opens a second revenue stream.
 - **In the demo:** One live poll with a results chart.
 
 #### In-app assistant (English and Pidgin)
@@ -324,7 +324,7 @@ Invite the whole class executive into a space with defined roles.
 
 Release up to about 80 percent of expected dues early, repaid from later collections. Inspired by the Schoolable model.
 
-- **How it works:** Based on a space's collection history, Duevy offers an advance. Repayment is deducted automatically as students pay, so there is no separate repayment schedule to manage.
+- **How it works:** Based on a space's collection history, Duelite offers an advance. Repayment is deducted automatically as students pay, so there is no separate repayment schedule to manage.
 - **Why it matters:** Reps often need to buy materials or book venues before the money is in. An advance solves that without personal loans.
 - **In the demo:** A calculator and offer screen with simulated repayment. It is shown as an idea, not a live lending product.
 
@@ -334,8 +334,8 @@ Release up to about 80 percent of expected dues early, repaid from later collect
 
 Vendors sell handouts, class wear and manuals to a space at discounted prices, paid through the space.
 
-- **How it works:** Approved vendors list products. A rep picks an item and attaches it as a due, so students pay through Duevy and the vendor is paid from the space.
-- **Why it matters:** Bulk demand across many spaces gives students better prices and gives Duevy a revenue line.
+- **How it works:** Approved vendors list products. A rep picks an item and attaches it as a due, so students pay through Duelite and the vendor is paid from the space.
+- **Why it matters:** Bulk demand across many spaces gives students better prices and gives Duelite a revenue line.
 - **In the demo:** Catalogue and attach-to-due flow with two seeded vendors.
 
 #### AI defaulter nudges
@@ -408,10 +408,10 @@ Support many universities from one platform.
 
 **Tag:** `DEFERRED`
 
-Let a school's own portal pull dues data straight from Duevy.
+Let a school's own portal pull dues data straight from Duelite.
 
 - **How it works:** A simulated API console shows how a school would use keys scoped to its own students. Sample requests return payment status by matric number from the seed data, and a docs page explains each one.
-- **Why it matters:** Clearance and departmental checks become automatic, which makes Duevy useful to the school itself.
+- **Why it matters:** Clearance and departmental checks become automatic, which makes Duelite useful to the school itself.
 - **In the demo:** Key generation, a sample request and response, and an interactive docs page, all on seed data.
 
 #### Refund and dispute queue

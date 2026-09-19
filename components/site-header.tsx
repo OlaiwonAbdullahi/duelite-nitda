@@ -13,7 +13,7 @@ const LINKS = [
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <span className={`flex items-center gap-2.5 ${className}`}>
-      <span className="text-[17px] font-semibold tracking-tight">Duevy</span>
+      <span className="text-[17px] font-semibold tracking-tight">Duelite</span>
     </span>
   );
 }
@@ -24,7 +24,7 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-white/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
-        <a href="#top" className="shrink-0" aria-label="Duevy home">
+        <a href="#top" className="shrink-0" aria-label="Duelite home">
           <Logo />
         </a>
 

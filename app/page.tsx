@@ -99,7 +99,7 @@ const REPLACES = [
   "The rep’s notebook",
 ];
 
-const WITH_DUEVY = [
+const WITH_DUELITE = [
   "One transfer for every due",
   "A receipt with a reference",
   "Two signatures on every withdrawal",
@@ -197,7 +197,7 @@ const QUOTES = [
 
 const FAQS = [
   {
-    q: "What is Duevy?",
+    q: "What is Duelite?",
     a: "A platform for departmental money. A course rep creates a space for a department, class or association and adds dues to it. Students join with a code, tick what they owe and pay in one transfer. The rep watches collections arrive live and withdraws to their own bank account, and every movement is recorded in an audit trail students can inspect.",
   },
   {
@@ -256,7 +256,7 @@ export default function Home() {
             </h1>
 
             <p className="mx-auto mt-7 max-w-xl text-[17px] leading-[1.65] text-ink-muted sm:text-[19px]">
-              Duevy is where students pay departmental dues, handouts and levies
+              Duelite is where students pay departmental dues, handouts and levies
               in one transfer — and where course reps collect, track and
               withdraw that money with a full paper trail.
             </p>
@@ -332,10 +332,10 @@ export default function Home() {
               <div className="reveal rounded-3xl border border-white/[0.14] bg-white/[0.07] p-6 sm:p-7">
                 <span className="inline-flex items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.14em] text-white/55">
                   <span className="h-1.5 w-1.5 rounded-full bg-white" />
-                  With Duevy
+                  With Duelite
                 </span>
                 <ul className="mt-5 space-y-3.5">
-                  {WITH_DUEVY.map((item) => (
+                  {WITH_DUELITE.map((item) => (
                     <li
                       key={item}
                       className="flex items-center gap-2.5 text-[15.5px] font-medium sm:text-[16.5px]"
@@ -412,7 +412,7 @@ export default function Home() {
                 ]}
               >
                 <div className="overflow-hidden rounded-2xl border border-black/[0.08] bg-white">
-                  <MockBar title="duevy.app / checkout" />
+                  <MockBar title="duelite.app / checkout" />
                   <div className="p-5">
                     <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-ink-muted">
                       Microbiology 400L
@@ -498,7 +498,7 @@ export default function Home() {
                 ]}
               >
                 <div className="overflow-hidden rounded-2xl border border-black/[0.08] bg-white">
-                  <MockBar title="duevy.app / collections" />
+                  <MockBar title="duelite.app / collections" />
                   <div className="p-5">
                     <div className="grid grid-cols-3 gap-3">
                       {[
@@ -580,7 +580,7 @@ export default function Home() {
                 ]}
               >
                 <div className="overflow-hidden rounded-2xl border border-black/[0.08] bg-white">
-                  <MockBar title="duevy.app / withdraw" />
+                  <MockBar title="duelite.app / withdraw" />
                   <div className="p-5">
                     <div className="flex items-baseline justify-between">
                       <p className="text-[13px] text-ink-muted">
@@ -661,7 +661,7 @@ export default function Home() {
           className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28"
         >
           <div className="reveal max-w-2xl">
-            <Label>How Duevy thinks</Label>
+            <Label>How Duelite thinks</Label>
             <h2 className="mt-5 text-[clamp(2rem,4.6vw,3.2rem)] font-semibold leading-[1.05] tracking-[-0.03em]">
               Three rules about other people’s money.
             </h2>
@@ -790,7 +790,7 @@ export default function Home() {
               </h2>
               <p className="mt-5 text-[17px] leading-[1.6] text-ink-muted">
                 Four moments from a normal semester. Every one of them is a
-                thing Duevy is built to delete.
+                thing Duelite is built to delete.
               </p>
             </div>
 
@@ -1006,7 +1006,7 @@ export default function Home() {
 
           <div className="mt-14 flex flex-col gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-[13px] text-white/45">
-              © 2026 Duevy. A hackathon demo — simulated payments, seeded data,
+              © 2026 Duelite. A hackathon demo — simulated payments, seeded data,
               no real money.
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2">

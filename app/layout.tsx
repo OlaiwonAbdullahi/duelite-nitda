@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Duevy — Pay your dues. Simply.",
+  title: "Duelite — Pay your dues. Simply.",
   description:
     "Nigerian students pay departmental dues, handouts and levies in one transfer. Course reps collect, track and withdraw with a full paper trail.",
   openGraph: {
-    title: "Duevy — Pay your dues. Simply.",
+    title: "Duelite — Pay your dues. Simply.",
     description:
       "One transfer for every due you owe. A live dashboard for your rep. Two signatures on every withdrawal, and books the whole class can check.",
     type: "website",

@@ -158,3 +158,17 @@ details[open] .faq-sign {
     position: static;
   }
 }
+
+/* --- Print: the audit report is exported with the browser's own print-to-PDF,
+   so the print stylesheet is the export format. ------------------------- */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+  @page {
+    margin: 16mm;
+  }
+}

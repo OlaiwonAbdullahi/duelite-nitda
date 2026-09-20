@@ -19,7 +19,7 @@ import {
   useDemo,
   userById,
   type DemoState,
-} from "@/lib/demo/store";
+} from "@/lib/admin/store";
 
 type Txn = {
   id: string;

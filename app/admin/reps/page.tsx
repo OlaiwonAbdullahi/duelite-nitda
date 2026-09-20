@@ -17,7 +17,7 @@ import {
   spaceTotals,
   naira,
   useDemo,
-} from "@/lib/demo/store";
+} from "@/lib/admin/store";
 
 export default function RepsPage() {
   const demo = useDemo();

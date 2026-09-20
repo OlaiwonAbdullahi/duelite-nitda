@@ -23,7 +23,7 @@ import {
   touchApiKey,
   useDemo,
   type DemoState,
-} from "@/lib/demo/store";
+} from "@/lib/admin/store";
 
 /* The institution API is simulated: there is no server in this build. The
  * handlers below read the same seed the console does, so a school can see the

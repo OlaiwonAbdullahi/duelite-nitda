@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { Button, Card, Field, TextInput } from "@/components/admin/ui";
 import { Logo } from "@/components/site-header";
-import { DEMO_ADMIN, signIn } from "@/lib/demo/session";
+import { DEMO_ADMIN, signIn } from "@/lib/admin/session";
 
 /* Dummy sign-in. Any email and password get in — the gate exists so the
  * console has a front door on stage, not because anything is protected. */

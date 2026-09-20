@@ -15,7 +15,7 @@ import {
   spaceTotals,
   useDemo,
   userById,
-} from "@/lib/demo/store";
+} from "@/lib/admin/store";
 
 export default function TransparencyPage({ params }: PageProps<"/t/[code]">) {
   const { code } = use(params);

@@ -19,7 +19,7 @@ import {
   useDemo,
   userById,
   type Refund,
-} from "@/lib/demo/store";
+} from "@/lib/admin/store";
 
 const TONE = {
   pending: "warn",

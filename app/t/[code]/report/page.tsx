@@ -13,7 +13,7 @@ import {
   spaceByCode,
   useDemo,
   userById,
-} from "@/lib/demo/store";
+} from "@/lib/admin/store";
 
 /* Exportable audit report.
  *

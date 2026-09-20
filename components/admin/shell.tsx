@@ -20,8 +20,8 @@ import {
 import { Logo } from "@/components/site-header";
 import SignIn from "@/components/admin/sign-in";
 import { Button, Select } from "@/components/admin/ui";
-import { signOut, useSession } from "@/lib/demo/session";
-import { resetDemo, simulatePayments, useDemo } from "@/lib/demo/store";
+import { signOut, useSession } from "@/lib/admin/session";
+import { resetDemo, simulatePayments, useDemo } from "@/lib/admin/store";
 
 /* School scope. Every admin screen reads it so the multi-institution story
  * works from a single control in the header. */

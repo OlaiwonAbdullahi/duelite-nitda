@@ -10,7 +10,7 @@ import {
   spaceTotals,
   useDemo,
   userById,
-} from "@/lib/demo/store";
+} from "@/lib/admin/store";
 
 export default function AdminOverview() {
   const demo = useDemo();

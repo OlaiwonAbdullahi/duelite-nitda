@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check:demo": "node --experimental-strip-types lib/demo/check.ts"
+    "check:demo": "node --experimental-strip-types lib/admin/check.ts",
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "@hugeicons/core-free-icons": "^4.3.4",

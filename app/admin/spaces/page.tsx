@@ -19,7 +19,7 @@ import {
   spaceTotals,
   useDemo,
   userById,
-} from "@/lib/demo/store";
+} from "@/lib/admin/store";
 
 export default function SpacesPage() {
   const demo = useDemo();

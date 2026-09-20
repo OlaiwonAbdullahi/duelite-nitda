@@ -13,7 +13,7 @@ import {
   Tag,
   TextInput,
 } from "@/components/admin/ui";
-import { dateTime, useDemo, userById, type ActivityKind } from "@/lib/demo/store";
+import { dateTime, useDemo, userById, type ActivityKind } from "@/lib/admin/store";
 
 const KINDS: { value: string; label: string }[] = [
   { value: "all", label: "Everything" },

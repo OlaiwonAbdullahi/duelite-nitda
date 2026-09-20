@@ -18,7 +18,9 @@ import {
 } from "@hugeicons/core-free-icons";
 
 import { Logo } from "@/components/site-header";
+import SignIn from "@/components/admin/sign-in";
 import { Button, Select } from "@/components/admin/ui";
+import { signOut, useSession } from "@/lib/demo/session";
 import { resetDemo, simulatePayments, useDemo } from "@/lib/demo/store";
 
 /* School scope. Every admin screen reads it so the multi-institution story
@@ -42,6 +44,7 @@ const NAV = [
 
 export default function AdminShell({ children }: { children: ReactNode }) {
   const demo = useDemo();
+  const session = useSession();
   const pathname = usePathname();
   const [schoolId, setSchoolId] = useState("all");
   const [panelOpen, setPanelOpen] = useState(false);
@@ -52,6 +55,8 @@ export default function AdminShell({ children }: { children: ReactNode }) {
     "/admin/reps": pending,
     "/admin/disputes": disputes,
   };
+
+  if (!session) return <SignIn />;
 
   return (
     <SchoolContext value={{ schoolId, setSchoolId }}>
@@ -84,16 +89,30 @@ export default function AdminShell({ children }: { children: ReactNode }) {
                 <HugeiconsIcon icon={ZapIcon} size={15} strokeWidth={2} />
                 <span className="ml-1.5">Demo</span>
               </Button>
+              <button
+                type="button"
+                onClick={signOut}
+                title={`Signed in as ${session.email} — sign out`}
+                className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-black/10 py-1 pl-1 pr-3 text-[13px] font-medium transition-colors hover:bg-lilac"
+              >
+                <span className="grid h-7 w-7 place-items-center rounded-full bg-ink text-[11px] text-white">
+                  {session.name
+                    .split(" ")
+                    .map((w) => w[0])
+                    .join("")}
+                </span>
+                Sign out
+              </button>
             </div>
           </div>
 
           {panelOpen && <DemoPanel />}
         </header>
 
-        <div className="mx-auto flex max-w-7xl gap-8 px-5 py-8 sm:px-8">
+        <div className="mx-auto flex max-w-7xl items-start gap-8 px-5 py-8 sm:px-8">
           <nav
             aria-label="Admin"
-            className="hidden w-52 shrink-0 flex-col gap-0.5 lg:flex"
+            className="sticky top-20 hidden max-h-[calc(100vh-6rem)] w-52 shrink-0 flex-col gap-0.5 overflow-y-auto lg:flex"
           >
             {NAV.map((item) => {
               const active =
